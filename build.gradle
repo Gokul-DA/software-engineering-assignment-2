@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'dll'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor "org.projectlombok:lombok:1.18.24"
+
+    // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
+//    implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.1.jre8'
+
+    implementation name:'sqljdbc4-2.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
